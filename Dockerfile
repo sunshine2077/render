@@ -5,12 +5,12 @@ WORKDIR /root
 # 更新软件源
 RUN     apt update -y                                                                   				&& \
         apt upgrade -y                                                                  				&& \
-        apt install -y --no-install-recommends openssh-server 	                                && \   
+        apt install -y --no-install-recommends openssh-server 	                                                        && \   
         apt install -y --no-install-recommends init vim curl ca-certificates            				&& \
         apt install -y --no-install-recommends python3 python3-pip                      				&& \
         apt autoremove -y                                                               				&& \
         apt clean                                                                       				&& \
-        echo "root:touch123456" | chpasswd                                                      && \
+        echo "root:touch123456" | chpasswd                                                                              && \
         ln -sf /bin/bash /bin/sh                                                        				&& \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # 暴露端口
