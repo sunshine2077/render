@@ -16,4 +16,4 @@ RUN     apt update -y                                                           
 # 暴露端口
 EXPOSE 22
 # 容器启动时执行启动脚本
-CMD ["/bin/bash","/usr/sbin/sshd -D"]
+ENTRYPOINT /usr/sbin/sshd -D
