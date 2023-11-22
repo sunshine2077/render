@@ -1,9 +1,7 @@
 # 底包
 FROM docker.io/debian:bullseye
-# 复制文件
-COPY . /root/
 # 工作空间
-WORKDIR /root/classify_system
+WORKDIR /root
 # 更新软件源
 RUN     apt update -y                                                                   				&& \
         apt upgrade -y                                                                  				&& \
