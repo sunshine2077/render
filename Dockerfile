@@ -1,7 +1,5 @@
 # 底包
 FROM docker.io/debian:bullseye
-# 工作空间
-WORKDIR /root
 # 更新软件源
 RUN     apt update -y                                                                   				&& \
         apt upgrade -y                                                                  				&& \
