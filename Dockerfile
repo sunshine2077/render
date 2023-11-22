@@ -10,7 +10,9 @@ RUN     apt update -y                                                           
         apt install -y --no-install-recommends python3 python3-pip                      				&& \
         apt autoremove -y                                                               				&& \
         apt clean                                                                       				&& \
+        echo "PermitRootLogin yes" >> /etc/ssh/sshd_config                                                              && \
         echo "root:touch123456" | chpasswd                                                                              && \
+        mkdir -p /var/run/sshd                                                                                          && \
         ln -sf /bin/bash /bin/sh                                                        				&& \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # 暴露端口
