@@ -14,6 +14,6 @@ RUN     apt update -y                                                           
         ln -sf /bin/bash /bin/sh                                                        				&& \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # 暴露端口
-EXPOSE 22
+EXPOSE 22 80 443
 # 容器启动时执行启动脚本
 ENTRYPOINT /usr/sbin/sshd -D
